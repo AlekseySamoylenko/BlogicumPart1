@@ -81,8 +81,10 @@ def post_detail(request, post_id):
 def category_posts(request, category_slug):
     """View функция - категория постов."""
     template = 'blog/category.html'
+    matching_posts = [post for post in posts if post['category'] == category_slug]
     context = {
-        "category": category_slug,
+        'category': category_slug,
+        'posts': matching_posts,
     }
     return render(
         request=request,

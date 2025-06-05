@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'pages',
+    'blog.apps.BlogConfig',
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +85,8 @@ DATABASES = {
 STATICFILES_DIRS = [
     BASE_DIR / 'static_dev',
 ]
+
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
